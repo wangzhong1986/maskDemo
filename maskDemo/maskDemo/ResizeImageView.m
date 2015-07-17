@@ -38,7 +38,7 @@
         
         CALayer *layer = [CALayer layer];
         layer.frame = self.bounds;
-        layer.contents = (__bridge id)[UIImage imageNamed:@"遮罩1"].CGImage;
+        layer.contents = (__bridge id)[UIImage imageNamed:@"遮罩3"].CGImage;
         self.layer.mask = layer;
         
         self.backgroundColor = [UIColor grayColor];
@@ -267,20 +267,20 @@ CGFloat getDistance(CGPoint p1, CGPoint p2)
 
 -(UIImage *)outputImage
 {
-    UIView *view = [[UIView alloc]initWithFrame:self.bounds];
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame:self.imageView.bounds];
-    [view addSubview:imgView];
-    imgView.image = self.imageView.image;
-    imgView.transform = self.imageView.transform;
-    CALayer *layer = [CALayer layer];
-    layer.frame = view.bounds;
-    layer.contents = (__bridge id)[UIImage imageNamed:@"遮罩3"].CGImage;
-    view.layer.mask = layer;
+//    UIView *view = [[UIView alloc]initWithFrame:self.bounds];
+//    UIImageView *imgView = [[UIImageView alloc]initWithFrame:self.imageView.bounds];
+//    [view addSubview:imgView];
+//    imgView.image = self.imageView.image;
+//    imgView.transform = self.imageView.transform;
+//    CALayer *layer = [CALayer layer];
+//    layer.frame = view.bounds;
+//    layer.contents = (__bridge id)[UIImage imageNamed:@"遮罩3"].CGImage;
+//    view.layer.mask = layer;
     
 //    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, [UIScreen mainScreen].scale);
-    UIGraphicsBeginImageContext(view.bounds.size);
+    UIGraphicsBeginImageContext(self.bounds.size);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    [view.layer renderInContext:ctx];
+    [self.layer renderInContext:ctx];
     // 从当前context中创建一个改变大小后的图片
     UIImage* tImage = UIGraphicsGetImageFromCurrentImageContext();
     // 使当前的context出堆栈

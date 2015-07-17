@@ -9,6 +9,9 @@
 #import "ViewController2.h"
 #import "XLFilterImageView.h"
 
+#import "UIImage+Blend.h"
+#import "UIImage+vImage.h"
+
 @interface ViewController2()
 
 {
@@ -32,27 +35,27 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
-    self.resultImageView.inputImage = _image;
-    filter = [CIFilter filterWithName:@"CIPhotoEffectTonal"];
+    self.resultImageView.inputImage = [_image emboss];
+    filter = [CIFilter filterWithName:@"CIColorControls"];
+    [filter setDefaults];
     self.resultImageView.filter = filter;
-    
+
 //    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 70, 300, 300)];
 //    imageView.image = _image;
 //    [self.view addSubview:imageView];
 }
 
 - (IBAction)doClickBtn {
-    
-//    self.ResultImageView.inputImage = [self grayscaleImage:_image];
-//    [filter setValue:@0 forKey:kCIInputSaturationKey];
-//    self.resultImageView.filter = filter;
+
+    [filter setValue:@0 forKey:kCIInputSaturationKey];
+    self.resultImageView.filter = filter;
     
 }
 - (IBAction)valueChanged:(UISlider*)sender {
     
-//    [filter setValue:@(sender.value) forKey:kCIInputContrastKey];
-//    
-//    self.resultImageView.filter = filter;
+    [filter setValue:@(sender.value) forKey:kCIInputContrastKey];
+    
+    self.resultImageView.filter = filter;
 }
 - (IBAction)changed2:(UISlider *)sender {
     

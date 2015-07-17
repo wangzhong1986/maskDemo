@@ -81,12 +81,12 @@
                                     <action selector="valueChanged:" destination="JCe-rb-ALy" eventType="valueChanged" id="fqO-5S-upD"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-cN-Iqe">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-cN-Iqe">
                                 <rect key="frame" x="179" y="481" width="243" height="31"/>
                                 <color key="tintColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9Ew-W4-Bwk"/>
-                                    <constraint firstAttribute="width" constant="239" id="QQ7-ht-ACp"/>
+                                    <constraint firstAttribute="width" constant="239" id="O2x-Hf-XwW"/>
+                                    <constraint firstAttribute="height" constant="30" id="Y0p-Ke-PJP"/>
                                 </constraints>
                                 <connections>
                                     <action selector="changed2:" destination="JCe-rb-ALy" eventType="valueChanged" id="lgM-pi-REl"/>
@@ -110,9 +110,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xFo-14-H6i" firstAttribute="top" secondItem="dHv-AO-mh4" secondAttribute="bottom" constant="326" id="06M-T4-ldF"/>
+                            <constraint firstAttribute="centerX" secondItem="pe4-cN-Iqe" secondAttribute="centerX" id="4Dr-7i-D0j"/>
                             <constraint firstAttribute="centerX" secondItem="mYc-bJ-cmk" secondAttribute="centerX" id="Dkw-NR-6Hf"/>
                             <constraint firstAttribute="centerX" secondItem="xFo-14-H6i" secondAttribute="centerX" id="MI6-cC-OSc"/>
                             <constraint firstItem="3q5-6U-D5X" firstAttribute="top" secondItem="mYc-bJ-cmk" secondAttribute="bottom" constant="119" id="NeX-EE-g1K"/>
+                            <constraint firstItem="pe4-cN-Iqe" firstAttribute="top" secondItem="mYc-bJ-cmk" secondAttribute="bottom" id="nh8-n6-hh3"/>
                         </constraints>
                     </view>
                     <connections>
