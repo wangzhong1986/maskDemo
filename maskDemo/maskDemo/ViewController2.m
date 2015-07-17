@@ -35,6 +35,55 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
+    /**
+     
+     case 1:
+     imageView.image = [self.orgImage gaussianBlur];
+     title = @"gaussianBlur";
+     break;
+     case 2:
+     imageView.image = [self.orgImage edgeDetection];
+     title = @"edgeDetection";
+     break;
+     case 3:
+     imageView.image = [self.orgImage emboss];
+     title = @"emboss";
+     break;
+     case 4:
+     imageView.image = [self.orgImage sharpen];
+     title = @"sharpen";
+     break;
+     case 5:
+     imageView.image = [self.orgImage unsharpen];
+     title = @"unsharpen";
+     break;
+     case 6:
+     imageView.image = [self.orgImage rotateInRadians:M_PI_2 * 0.3];
+     title = @"rotate";
+     break;
+     case 7:
+     imageView.image = [self.orgImage dilateWithIterations:3];
+     title = @"dilate";
+     break;
+     case 8:
+     imageView.image = [self.orgImage erodeWithIterations:3];
+     title = @"erode";
+     break;
+     case 9:
+     imageView.image = [self.orgImage gradientWithIterations:3];
+     title = @"gradient";
+     break;
+     case 10:
+     imageView.image = [self.orgImage tophatWithIterations:4];
+     title = @"tophat";
+     break;
+     case 11:
+     imageView.image = [self.orgImage equalization];
+     title = @"equalization";
+     break;
+
+     */
+    
     self.resultImageView.inputImage = [_image emboss];
     filter = [CIFilter filterWithName:@"CIColorControls"];
     [filter setDefaults];
