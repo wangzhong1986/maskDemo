@@ -11,6 +11,7 @@
 		53BE62B61B58AB3C002DC131 /* 遮罩1.png in Resources */ = {isa = PBXBuildFile; fileRef = 53BE62B41B58AB3C002DC131 /* 遮罩1.png */; };
 		53BE62B71B58AB3C002DC131 /* 遮罩2.png in Resources */ = {isa = PBXBuildFile; fileRef = 53BE62B51B58AB3C002DC131 /* 遮罩2.png */; };
 		53BE62B91B58AF36002DC131 /* 遮罩3.png in Resources */ = {isa = PBXBuildFile; fileRef = 53BE62B81B58AF36002DC131 /* 遮罩3.png */; };
+		816DA7291B58D009006F173A /* XLFilterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 816DA7281B58D009006F173A /* XLFilterImageView.m */; };
 		81706C3D1B57B86D003DA5AC /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 81706C3C1B57B86D003DA5AC /* ViewController2.m */; };
 		81C6A5531B54EB730053B398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C6A5521B54EB730053B398 /* main.m */; };
 		81C6A5561B54EB730053B398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C6A5551B54EB730053B398 /* AppDelegate.m */; };
@@ -37,6 +38,8 @@
 		53BE62B41B58AB3C002DC131 /* 遮罩1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "遮罩1.png"; sourceTree = "<group>"; };
 		53BE62B51B58AB3C002DC131 /* 遮罩2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "遮罩2.png"; sourceTree = "<group>"; };
 		53BE62B81B58AF36002DC131 /* 遮罩3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "遮罩3.png"; sourceTree = "<group>"; };
+		816DA7271B58D009006F173A /* XLFilterImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFilterImageView.h; sourceTree = "<group>"; };
+		816DA7281B58D009006F173A /* XLFilterImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFilterImageView.m; sourceTree = "<group>"; };
 		81706C3B1B57B86D003DA5AC /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		81706C3C1B57B86D003DA5AC /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		81C6A54D1B54EB730053B398 /* maskDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maskDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +106,8 @@
 				81706C3C1B57B86D003DA5AC /* ViewController2.m */,
 				81C6A5761B550C8E0053B398 /* ResizeImageView.h */,
 				81C6A5771B550C8E0053B398 /* ResizeImageView.m */,
+				816DA7271B58D009006F173A /* XLFilterImageView.h */,
+				816DA7281B58D009006F173A /* XLFilterImageView.m */,
 				53BE62B21B589B5D002DC131 /* mask5.png */,
 				53BE62B41B58AB3C002DC131 /* 遮罩1.png */,
 				53BE62B51B58AB3C002DC131 /* 遮罩2.png */,
@@ -245,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816DA7291B58D009006F173A /* XLFilterImageView.m in Sources */,
 				81C6A5781B550C8E0053B398 /* ResizeImageView.m in Sources */,
 				81C6A5591B54EB730053B398 /* ViewController.m in Sources */,
 				81706C3D1B57B86D003DA5AC /* ViewController2.m in Sources */,
