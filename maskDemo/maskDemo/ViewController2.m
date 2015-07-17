@@ -43,6 +43,8 @@
 
 }
 
+
+//add xiaoliang zhushi
 -  (UIImage *) grayscaleImage: (UIImage *) image
 {
     
