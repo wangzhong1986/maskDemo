@@ -7,11 +7,18 @@
 //
 
 #import "ViewController2.h"
+#import "XLFilterImageView.h"
 
 @interface ViewController2()
-@property (weak, nonatomic) IBOutlet UIImageView *ResultImageView;
+
+{
+    CIFilter *filter;
+}
+
+@property (strong, nonatomic) XLFilterImageView *resultImageView;
 - (IBAction)doClickBtn;
 @property (weak, nonatomic) IBOutlet UISlider *colorslider;
+@property (weak, nonatomic) IBOutlet UISlider *slider2;
 
 - (IBAction)valueChanged:(id)sender;
 
@@ -25,61 +32,81 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
-    self.ResultImageView.image = _image;
-
+    self.resultImageView.inputImage = _image;
+    filter = [CIFilter filterWithName:@"CIPhotoEffectTonal"];
+    self.resultImageView.filter = filter;
+    
+//    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 70, 300, 300)];
+//    imageView.image = _image;
+//    [self.view addSubview:imageView];
 }
 
 - (IBAction)doClickBtn {
     
-    self.ResultImageView.image = [self grayscaleImage:_image];
+//    self.ResultImageView.inputImage = [self grayscaleImage:_image];
+//    [filter setValue:@0 forKey:kCIInputSaturationKey];
+//    self.resultImageView.filter = filter;
     
 }
-- (IBAction)valueChanged:(id)sender {
+- (IBAction)valueChanged:(UISlider*)sender {
     
-    UISlider* control = (UISlider*)sender;
-    if(control == self.colorslider){
+//    [filter setValue:@(sender.value) forKey:kCIInputContrastKey];
+//    
+//    self.resultImageView.filter = filter;
+}
+- (IBAction)changed2:(UISlider *)sender {
+    
+//    [filter setValue:@(sender.value) forKey:kCIInputBrightnessKey];
+//    
+//    self.resultImageView.filter = filter;
+}
 
+-(XLFilterImageView *)resultImageView
+{
+    if (!_resultImageView) {
+        _resultImageView = [XLFilterImageView filterWithFrame:CGRectMake(20, 70, 300, 300)];
+        [self.view addSubview:_resultImageView];
     }
-
+    return _resultImageView;
 }
 
 
 //add xiaoliang zhushi
--  (UIImage *) grayscaleImage: (UIImage *) image
-{
-    
-//    UIGraphicsBeginImageContext(self.bounds.size);
-//    CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    [self.layer renderInContext:ctx];
-//    // 从当前context中创建一个改变大小后的图片
-//    UIImage* tImage = UIGraphicsGetImageFromCurrentImageContext();
-//    CGImageRef image=CGImageCreateWithImageInRect([tImage CGImage], self.bounds);
-//    UIImage *finalimage=[UIImage imageWithCGImage:image];
-//    //    CGImageRelease(image);
-//    // 使当前的context出堆栈
-//    UIGraphicsEndImageContext();
-    
-    
-    CGSize size = image.size;
-    CGRect rect = CGRectMake(0.0f, 0.0f, image.size.width,
-                             image.size.height);
-    // Create a mono/gray color space
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
-    
-    //int bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast;
-    
-    CGContextRef context = CGBitmapContextCreate(nil, size.width,
-                                                 size.height, 8, 0, colorSpace, kCGBitmapByteOrderDefault);
-    CGColorSpaceRelease(colorSpace);
-    // Draw the image into the grayscale context
-    CGContextDrawImage(context, rect, [image CGImage]);
-    CGImageRef grayscale = CGBitmapContextCreateImage(context);
-    CGContextRelease(context);
-    // Recover the image
-    UIImage *img = [UIImage imageWithCGImage:grayscale];
-    CFRelease(grayscale);
-    return img;
-}
+//-  (UIImage *) grayscaleImage: (UIImage *) image
+//{
+//    
+////    UIGraphicsBeginImageContext(self.bounds.size);
+////    CGContextRef ctx = UIGraphicsGetCurrentContext();
+////    [self.layer renderInContext:ctx];
+////    // 从当前context中创建一个改变大小后的图片
+////    UIImage* tImage = UIGraphicsGetImageFromCurrentImageContext();
+////    CGImageRef image=CGImageCreateWithImageInRect([tImage CGImage], self.bounds);
+////    UIImage *finalimage=[UIImage imageWithCGImage:image];
+////    //    CGImageRelease(image);
+////    // 使当前的context出堆栈
+////    UIGraphicsEndImageContext();
+//    
+//    
+//    CGSize size = image.size;
+//    CGRect rect = CGRectMake(0.0f, 0.0f, image.size.width,
+//                             image.size.height);
+//    // Create a mono/gray color space
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+//    
+//    //int bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast;
+//    
+//    CGContextRef context = CGBitmapContextCreate(nil, size.width,
+//                                                 size.height, 8, 0, colorSpace, kCGBitmapByteOrderDefault);
+//    CGColorSpaceRelease(colorSpace);
+//    // Draw the image into the grayscale context
+//    CGContextDrawImage(context, rect, [image CGImage]);
+//    CGImageRef grayscale = CGBitmapContextCreateImage(context);
+//    CGContextRelease(context);
+//    // Recover the image
+//    UIImage *img = [UIImage imageWithCGImage:grayscale];
+//    CFRelease(grayscale);
+//    return img;
+//}
 
 
 
